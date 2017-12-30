@@ -2,9 +2,14 @@
   "dependencies": {
     "angular": "1.6.8",
     "angular-bootstrap": "0.12.2",
+    "angular-ui-bootstrap": "2.5.6",
+    "compression": "1.7.1",
     "express": "4.16.2",
     "jquery": "3.2.1",
-    "jquery-ui": "1.12.1"
+    "jquery-ui": "1.12.1",
+    "minify": "3.0.2",
+    "uglify": "0.1.5",
+    "uglify-js": "3.3.4"
   },
   "scripts": {
     "installation": "npm install -g nodemon && npm install",
