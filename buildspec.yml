@@ -5,6 +5,10 @@ phases:
     commands:
       - echo Installing Mocha...
       - npm install
+      - echo pwd
+      - pwd
+      - echo hostname
+      - hostname
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
