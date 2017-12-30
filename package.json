@@ -4,6 +4,6 @@
   },
   "scripts": {
   	"installation": "npm install",
-  	"start": "init.js"
+  	"start": "node init.js"
   }
 }
