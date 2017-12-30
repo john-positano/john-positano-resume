@@ -17,4 +17,3 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - aws s3 cp dist s3://codepipeline-us-west-2-965847873842/john-positano-resume
