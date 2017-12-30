@@ -1,9 +1,13 @@
 {
   "dependencies": {
-    "express": "4.16.2"
+    "angular": "1.6.8",
+    "angular-bootstrap": "0.12.2",
+    "express": "4.16.2",
+    "jquery": "3.2.1",
+    "jquery-ui": "1.12.1"
   },
   "scripts": {
-  	"installation": "npm install",
-  	"start": "node init.js"
+    "installation": "npm install -g nodemon && npm install",
+    "start": "nodemon -e js,scss,html node init.js"
   }
 }
