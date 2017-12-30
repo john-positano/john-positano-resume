@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo Installing Mocha...
-      - npm install
+      - npm run installation
       - echo pwd
       - pwd
       - echo hostname
