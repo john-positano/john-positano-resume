@@ -1,12 +1,28 @@
 let express = require('express');
 let app = express();
 let compression = require('compression');
+let serveStatic = require('serve-static');
+let stream = require('stream');
 
-app.use(compression());
+let uglify = require('./modules/uglify.js');
+
+console.log(uglify);
 
 app.use(
-	'/', 
+	'*.js',
+	(req, res, next) => {
+		console.log(req.originalUrl);
+		next();
+	}
+);
+
+app.use(
+	'/',
 	[
+		compression({
+			threshold: 0,
+			level: 9
+		}),
 		express.static('public'),
 		express.static('node_modules')
 	]

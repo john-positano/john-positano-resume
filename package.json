@@ -1,19 +1,23 @@
 {
   "dependencies": {
+    "@uirouter/angularjs": "1.0.12",
     "angular": "1.6.8",
     "angular-bootstrap": "0.12.2",
     "angular-ui-bootstrap": "2.5.6",
+    "angular-ui-router": "1.0.3",
     "compression": "1.7.1",
     "express": "4.16.2",
     "jquery": "3.2.1",
     "jquery-ui": "1.12.1",
     "jquery-ui-dist": "1.12.1",
     "minify": "3.0.2",
+    "node-sass": "4.7.2",
     "uglify": "0.1.5",
     "uglify-js": "3.3.4"
   },
   "scripts": {
-    "installation": "npm install -g nodemon && npm install",
+    "installation": "npm install -g nodemon && npm install -g minify && npm install",
+    "build": "node ./modules/uglify.js",
     "start": "nodemon -e js,scss,html node init.js"
   }
 }
