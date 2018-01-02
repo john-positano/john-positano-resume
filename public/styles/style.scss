@@ -7,8 +7,10 @@ body { @extend .skim; }
 
 div.row, div.col-xs-12 { height: 100%; }
 
-canvas {
+j-frame {
+	display: block;
 	@extend .skim, .full;
+	canvas { @extend .skim, .full; }
 }
 
 a { height: 100px; }

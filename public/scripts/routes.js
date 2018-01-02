@@ -9,7 +9,8 @@ JohnPositanoResume.config(
 				    url: '/',
 				    views: {
 				    	'main' : {
-				    		templateUrl: 'views/homepage.html'
+				    		templateUrl: 'views/homepage.html',
+				    		controller: 'homePageController'
 				    	}
 				    }
 				}
