@@ -12,6 +12,7 @@
     "jquery-ui-dist": "1.12.1",
     "minify": "3.0.2",
     "node-sass": "4.7.2",
+    "nodemon": "1.14.7",
     "uglify": "0.1.5",
     "uglify-js": "3.3.4"
   },

@@ -6,8 +6,6 @@ let stream = require('stream');
 
 let uglify = require('./modules/uglify.js');
 
-console.log(uglify);
-
 app.use(
 	'*.js',
 	(req, res, next) => {
