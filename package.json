@@ -13,13 +13,13 @@
     "minify": "3.0.2",
     "node-sass": "4.7.2",
     "nodemon": "1.14.7",
-    "three": "^0.89.0",
+    "three": "0.89.0",
     "uglify": "0.1.5",
     "uglify-js": "3.3.4"
   },
   "scripts": {
     "installation": "npm install -g nodemon && npm install -g minify && npm install",
     "build": "node ./modules/uglify.js",
-    "start": "nodemon -e js,scss,html node init.js"
+    "start": "./node_modules/nodemon/nodemon.js -e js,scss,html node init.js"
   }
 }

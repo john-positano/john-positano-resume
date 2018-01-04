@@ -3,8 +3,12 @@ JohnPositanoResume.directive(
 	function () {
 		return {
 			restrict: 'EA',
-			controller: 'jFrameController',
+			// controller: 'jFrameController',
+			bindToController: true,
+			require: ['jFrameController', 'jFrameCameraController'],
 			link: function ($scope, $element, attrs, $controller) {
+				console.log($controller);
+
 				var $w = $element.width();
 				var $h = $element.height();
 
@@ -15,18 +19,13 @@ JohnPositanoResume.directive(
 
 				$element.append($scope.renderer.domElement);
 
-				$scope.camera.position.z = 5;
+				window.$$pos = $scope.camera.position;
 
 				$scope.$canvas = angular.element($scope.renderer.domElement);
 
-				window.$pos = $scope.camera.position;
-
 				$scope.animate = function () {
-					requestAnimationFrame( $scope.animate );
 					$scope.renderer.render($scope.scene, $scope.camera);
 				};
-
-				$controller.$3scope = $scope;
 			},
 		}
 	}
