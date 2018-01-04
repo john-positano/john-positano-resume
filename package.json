@@ -20,6 +20,6 @@
   "scripts": {
     "installation": "npm install -g nodemon && npm install -g minify && npm install",
     "build": "node ./modules/uglify.js",
-    "start": "./node_modules/nodemon/nodemon.js -e js,scss,html node init.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js -e js,scss,html node init.js"
   }
 }
