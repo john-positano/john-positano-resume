@@ -3,9 +3,7 @@ JohnPositanoResume.directive(
 	function () {
 		return {
 			restrict: 'EA',
-			// controller: 'jFrameController',
-			bindToController: true,
-			require: ['^jFrameController', 'jFrameCameraController'],
+			controller: 'jFrameController',
 			link: function ($scope, $element, attrs, $controller) {
 				console.log($controller);
 
