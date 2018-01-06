@@ -10,7 +10,12 @@ JohnPositanoResume.config(
 				    views: {
 				    	'main' : {
 				    		templateUrl: 'views/homepage.html',
-				    		controller: 'homePageController'
+				    		controller: 'homePageController',
+				    		resolve: {
+				    				'OrbitControls': function (jFrameCameraController) {
+				    						return 1;
+				    				}
+				    		}
 				    	}
 				    }
 				}

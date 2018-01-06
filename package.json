@@ -5,6 +5,7 @@
     "angular-bootstrap": "0.12.2",
     "angular-ui-bootstrap": "2.5.6",
     "angular-ui-router": "1.0.3",
+    "browserify": "15.0.0",
     "compression": "1.7.1",
     "express": "4.16.2",
     "jquery": "3.2.1",
@@ -14,6 +15,8 @@
     "node-sass": "4.7.2",
     "nodemon": "1.14.7",
     "three": "0.89.0",
+    "three-orbit-controls": "82.1.0",
+    "three-orbitcontrols": "2.0.0",
     "uglify": "0.1.5",
     "uglify-js": "3.3.4"
   },

@@ -1,33 +1,35 @@
-JohnPositanoResume.controller('jFrameController', function ($scope, $log, $timeout, $interval) {
+JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, $log, $timeout, $interval) {
 	window.$scope = $scope;
+  $scope.rings = [];
 
-	$scope.loadMeshWithMaterial = function (url) {
+	$scope.loadMesh = function (url, callback) {
 		var loader = new THREE.JSONLoader();
-		loader.load(
-			url,
-			function (geometry) {
-				var mesh = new THREE.Mesh(geometry);
-				[mesh.scale.x, mesh.scale.y, mesh.scale.z] = Array(3).fill(0.75);
-				mesh.translation = THREE.GeometryUtils.center(geometry);
-				$scope.scene.add(new THREE.AmbientLight(0xffffff));
-				$scope.scene.add(mesh);
-				console.log($scope.scene);
-			}
-		);
+		loader.load(url, callback);
 	};
 
-	$timeout(function () { 
-		// $scope.loadMeshWithMaterial('/views/3dComponents/ring_fragment.json');
+	$scope.createRing = function () {
+		return {
+			ringFragments: []
+		};
+	};
 
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			$scope.scene.add( cube );
+  $scope.pushRing = function () { $scope.rings.push($scope.createRing()); };
 
-			$scope.camera.position.z = 5;
+  $scope.ringCanAcceptFragment = function (ring) { return ring.ringFragments.length < 6; };
 
+  $scope.pushRingFragment = function (ringFragment) {
+    $scope.rings.length || $scope.pushRing();
 
-		$scope.camera.position.z = 5; 
-		$scope.animate(); 
-	});
+    for (var ring in $scope.rings) {
+      if ($scope.ringCanAcceptFragment($scope.rings[ring])) {
+      	ringFragment.$$parent = $scope.rings[ring];
+        $scope.rings[ring].ringFragments.push(ringFragment);
+      }
+    }
+  };
+
+  $scope.$on('jFrameSetupComplete', function () {
+    $scope.camera.position.z = 10;
+    $scope.animate();
+  });
 });

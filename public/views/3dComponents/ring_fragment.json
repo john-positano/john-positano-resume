@@ -3,7 +3,7 @@
     "materials":[{
         "visible":true,
         "depthTest":true,
-        "wireframe":false,
+        "wireframe":true,
         "colorDiffuse":[0.64,0.64,0.64],
         "specularCoef":50,
         "depthWrite":true,
