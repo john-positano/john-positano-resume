@@ -4,7 +4,6 @@
     "angular": "1.6.8",
     "angular-bootstrap": "0.12.2",
     "angular-ui-bootstrap": "2.5.6",
-    "angular-ui-router": "1.0.3",
     "browserify": "15.0.0",
     "compression": "1.7.1",
     "express": "4.16.2",
