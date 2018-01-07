@@ -8,9 +8,6 @@
   min-width: 100%;
   min-height: 100%; }
 
-body {
-  background-color: #222222; }
-
 div.row, div.col-xs-12 {
   height: 100%; }
 
@@ -19,6 +16,27 @@ j-frame {
 
 a {
   height: 100px; }
+
+.darkgrey {
+  background-color: darkgrey; }
+
+.red {
+  background-color: red; }
+
+.orange {
+  background-color: orange; }
+
+.yellow {
+  background-color: yellow; }
+
+.green {
+  background-color: green; }
+
+.blue {
+  background-color: blue; }
+
+.purple {
+  background-color: purple; }
 
 .main-name {
   font-size: 64px; }

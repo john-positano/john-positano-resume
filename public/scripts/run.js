@@ -1,5 +1,5 @@
 JohnPositanoResume.run(
 	function ($state) {
-		$state.go('/');
+		$state.go('main');
 	}
 );

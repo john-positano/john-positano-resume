@@ -9,6 +9,9 @@
   <j-frame-camera-controls></j-frame-camera-controls>
   <j-frame-ring-controls></j-frame-ring-controls>
 </div>
-<div class="col-xs-12 mainContainer">
+<div 
+  ng-class="{ 'darkgrey': '$state.current.url.length' }" 
+  class="col-xs-12 mainContainer" 
+  ui-view="tunnelView">
 
 </div>

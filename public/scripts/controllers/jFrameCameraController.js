@@ -9,6 +9,7 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   };
 
   $scope.scrollControl = function ($e) {
+      $rootScope.$emit('scroll', $e);
       $e.originalEvent.deltaY > 0
         ? $scope.camera.position.z-- 
         : (!($scope.camera.position.z < 6) || $scope.camera.position.z++);
@@ -25,8 +26,7 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   $scope.$canvas.on('mouseup', $scope.mouseUp);
   $scope.$canvas.on('mousemove', $scope.mouseMove);
   $scope.$canvas.on('mousewheel', $scope.scrollControl);
-  $document.on('scroll', function ($e) { 
-    console.log($e); 
+  $document.on('scroll', function ($e) {  
     $e.preventDefault(); 
     $e.stopPropagation();
     console.log($e.isDefaultPrevented(), $e.isPropagationStopped()); 
