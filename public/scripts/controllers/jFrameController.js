@@ -63,7 +63,7 @@ JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, 
   };
 
   $scope.$on('jFrameSetupComplete', function () {
-    $scope.camera.position.z = 3;
+    $scope.camera.position.z = 6;
     $scope.rollCamera($timeout);
   });
 });

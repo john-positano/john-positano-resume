@@ -18,7 +18,7 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
           var $SD = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
           [$SD.scale.x, $SD.scale.y, $SD.scale.z] = Array(3).fill(1);
           $SD.rotation.y = Math.PI / -2;
-          $SD.position.y = -5;
+          $SD.position.y = -11;
           $SD.position.z = 0;
           $scope.scene.add($SD);
         }
@@ -30,7 +30,7 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
           var $SD = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
           [$SD.scale.x, $SD.scale.y, $SD.scale.z] = Array(3).fill(1);
           $SD.rotation.y = Math.PI / -2;
-          $SD.position.y = -5;
+          $SD.position.y = -11;
           $SD.position.z = 0;
           $scope.scene.add($SD);
         }
