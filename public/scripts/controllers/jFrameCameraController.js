@@ -1,4 +1,4 @@
-JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $scope, $log, $timeout, $interval, $document) {
+JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $window, $scope, $log, $timeout, $interval, $document) {
   $scope._mouseDown = false;
   $scope.mouseDown = function ($e) { $scope._mouseDown = true; };
 
@@ -9,7 +9,7 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $s
   };
 
   $scope.scrollControl = function ($e) {
-    ($e.originalEvent.deltaY > 0) ? $scope.camera.position.z++ : $scope.camera.position.z--;
+    ($e.originalEvent.deltaY > 0) ? $scope.camera.position.z-- : $scope.camera.position.z++;
     $scope.animate();
   };
 
@@ -25,4 +25,10 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $s
   $scope.$canvas.on('mouseup', $scope.mouseUp);
   $scope.$canvas.on('mousemove', $scope.mouseMove);
   $scope.$canvas.on('mousewheel', $scope.scrollControl);
+  $document.on('scroll', function ($e) { 
+    console.log($e); 
+    $e.preventDefault(); 
+    $e.stopPropagation();
+    console.log($e.isDefaultPrevented(), $e.isPropagationStopped()); 
+  });
 });

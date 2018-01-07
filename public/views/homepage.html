@@ -1,10 +1,10 @@
 <!-- homepage.html -->
 <div class="col-xs-12">
 	<j-frame>
-    <ring>
-      <ring-fragment></ring-fragment>
-      <ring-fragment></ring-fragment>
+    <ring ng-repeat="i in [1,2,3,4,5,6]">
+      <ring-fragment ng-repeat="j in [1,2,3,4,5,6]"></ring-fragment>
     </ring>
   </j-frame>
   <j-frame-camera-controls></j-frame-camera-controls>
+  <j-frame-ring-controls></j-frame-ring-controls>
 </div>
