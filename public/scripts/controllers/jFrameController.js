@@ -22,7 +22,6 @@ JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, 
 			ringNumber: $scope.rings.length + 1,
 			ringFragments: [],
 			ringGroup: (new THREE.Object3D()),
-
 			addRingFragmentToRingGroup: function (ringFragment) {
 				ring.ringGroup.add(ringFragment);
 			},
@@ -64,7 +63,7 @@ JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, 
   };
 
   $scope.$on('jFrameSetupComplete', function () {
-    $scope.camera.position.z = 12;
+    $scope.camera.position.z = 3;
     $scope.rollCamera($timeout);
   });
 });

@@ -2,7 +2,7 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
   $timeout(
     function () {
       $scope.loadMesh(
-        '/views/3dComponents/john_positano_alt.json',
+        '/views/3dComponents/john_positano.json',
         function (geometry) {
           $JP = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
           [$JP.scale.x, $JP.scale.y, $JP.scale.z] = Array(3).fill(100);
@@ -11,6 +11,31 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
           $scope.scene.add($JP);
         }
       );
+
+      $scope.loadMesh(
+        '/views/3dComponents/scroll_down.json',
+        function (geometry) {
+          var $SD = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
+          [$SD.scale.x, $SD.scale.y, $SD.scale.z] = Array(3).fill(1);
+          $SD.rotation.y = Math.PI / -2;
+          $SD.position.y = -5;
+          $SD.position.z = 0;
+          $scope.scene.add($SD);
+        }
+      );
+
+      $scope.loadMesh(
+        '/views/3dComponents/scroll_down_arrow.json',
+        function (geometry) {
+          var $SD = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
+          [$SD.scale.x, $SD.scale.y, $SD.scale.z] = Array(3).fill(1);
+          $SD.rotation.y = Math.PI / -2;
+          $SD.position.y = -5;
+          $SD.position.z = 0;
+          $scope.scene.add($SD);
+        }
+      );
+
     }
   );
 });
