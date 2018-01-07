@@ -7,7 +7,7 @@ JohnPositanoResume.directive(
         $scope.loadMesh(
           '/views/3dComponents/ring_fragment.json',
           function (geometry) {
-            var $rF = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xffffff }));
+            var $rF = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xffffff }));
             [$rF.scale.x, $rF.scale.y, $rF.scale.z] = Array(3).fill(0.75);
             $rF.rotation.x = Math.PI / -2;
             $rF.rotation.z = Math.PI / -2;

@@ -3,11 +3,7 @@ JohnPositanoResume.directive(
   function () {
     return {
       restrict: 'EA',
-      controller: 'jFrameCameraController',
-      link: function () {
-
-      },
-      compile: function () { }
+      controller: 'jFrameCameraController'
     }
   }
 );

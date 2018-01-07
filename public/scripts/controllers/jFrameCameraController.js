@@ -10,13 +10,11 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
 
   $scope.scrollControl = function ($e) {
     ($e.originalEvent.deltaY > 0) ? $scope.camera.position.z-- : $scope.camera.position.z++;
-    $scope.animate();
   };
 
   $scope.dragControl = function ($e) {
     $scope.camera.position.x += $e.originalEvent.movementX / -100;
     $scope.camera.position.y += $e.originalEvent.movementY / 100;
-    $scope.animate();
   };
 
   $document.on('keydown', $scope.keyDown);

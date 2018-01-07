@@ -1,9 +1,19 @@
-JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, $log, $timeout, $interval) {
+JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, $log, $timeout, $interval, $document) {
 	window.$scope = $scope;
   $scope.rings = [];
 
 	$scope.loadMesh = function (url, callback) {
 		var loader = new THREE.JSONLoader();
+		loader.load(url, callback);
+	};
+
+	$scope.loadObject = function (url, callback) {
+		var loader = new THREE.ObjectLoader();
+		loader.load(url, callback);
+	};
+
+	$scope.loadFont = function (url, callback) {
+		var loader = new THREE.FontLoader();
 		loader.load(url, callback);
 	};
 
@@ -54,7 +64,7 @@ JohnPositanoResume.controller('jFrameController', function ($rootScope, $scope, 
   };
 
   $scope.$on('jFrameSetupComplete', function () {
-    $scope.camera.position.z = 60;
+    $scope.camera.position.z = 12;
     $scope.rollCamera($timeout);
   });
 });
