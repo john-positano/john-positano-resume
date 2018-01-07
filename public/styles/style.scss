@@ -14,7 +14,7 @@ j-frame {
 
 a { height: 100px; }
 
-.darkgrey { background-color: darkgrey; }
+.darkgrey { background-color: #444444; }
 .red { background-color: red; }
 .orange { background-color: orange; }
 .yellow { background-color: yellow; }
@@ -28,3 +28,13 @@ a { height: 100px; }
 
 .jFrameContainer { z-index: 10; }
 .mainContainer { width: 100vw; height: 100vh; z-index: -1; color: white; }
+
+.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0.6;
+}
+
+/* The finishing CSS styles for the enter animation */
+.ng-enter.ng-enter-active, .ng-enter.ng-leave-active {
+  opacity:1;
+}

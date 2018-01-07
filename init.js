@@ -26,6 +26,12 @@ app.use(
 	]
 );
 
-app.get('/', (req, res, next) => { res.send('hi'); });
+app.use(
+	['/1','/2','/3','/4','/5','/6'], 
+	function (req, res, next) { 
+		res.redirect('/');
+		return;
+	}
+);
 
 app.listen(process.env.PORT || 3000);

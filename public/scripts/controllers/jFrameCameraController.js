@@ -9,10 +9,10 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   };
 
   $scope.scrollControl = function ($e) {
-      $rootScope.$emit('scroll', $e);
-      $e.originalEvent.deltaY > 0
-        ? $scope.camera.position.z-- 
-        : (!($scope.camera.position.z < 6) || $scope.camera.position.z++);
+    $rootScope.$emit('scroll', $e);
+    $e.originalEvent.deltaY > 0
+      ? (!($scope.camera.position.z > -50) || $scope.camera.position.z--) 
+      : (!($scope.camera.position.z < 6) || $scope.camera.position.z++);
   };
 
   $scope.dragControl = function ($e) {

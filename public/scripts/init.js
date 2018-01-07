@@ -1,6 +1,7 @@
 window.JohnPositanoResume = angular.module(
 	'JohnPositanoResume',
 	[
-		'ui.router'
+		'ui.router',
+    'ngAnimate'
 	]
 );
