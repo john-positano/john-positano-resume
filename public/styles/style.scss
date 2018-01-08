@@ -2,7 +2,7 @@
 .skim { margin: 0px; padding: 0px; }
 .full { width: 100%; height: 100%; min-width: 100%; min-height: 100%; }
 
-body { @extend .skim; }
+body { @extend .skim; background-color: black; }
 
 div.row, div.col-xs-12 { height: 100%; }
 
@@ -10,6 +10,12 @@ j-frame {
 	display: block;
 	@extend .skim, .full;
 	canvas { @extend .skim, .full; }
+}
+
+tunnel-frame {
+  display: block;
+  @extend .full;
+  * { position: fixed; top: 0px; display: inline-block; }
 }
 
 a { height: 100px; }
@@ -26,15 +32,14 @@ a { height: 100px; }
 
 .jFrameContainer, .mainContainer { position: fixed; top: 0px; }
 
-.jFrameContainer { z-index: 10; }
-.mainContainer { width: 100vw; height: 100vh; z-index: -1; color: white; }
+.jFrameContainer { z-index: -3; }
+.mainContainer { width: 100vw; height: 100vh;  color: blue; }
 
-.ng-enter {
-  transition: 0.5s linear all;
-  opacity: 0.6;
+.border, .border > * { 
+  border: 1px solid white; 
+  // border-radius: 5px; 
 }
 
-/* The finishing CSS styles for the enter animation */
-.ng-enter.ng-enter-active, .ng-enter.ng-leave-active {
-  opacity:1;
-}
+.one { position: relative; display: inline-block; width: 8.33333vw; }
+.homePage, .homePage > * { pointer-events: none; }
+.THREECSS3dRenderer { z-index: 5; }

@@ -14,7 +14,7 @@ JohnPositanoResume.directive(
             $rF.material.opacity = 0.9;
             $scope.pushRingFragment($rF);
             $rF.rotation.y = (Math.PI * ($rF.$$parent.ringFragments.length - 2.5)) / 3;
-            $rF.position.z = (-1 * ($rF.$$parent.ringNumber - 1)) * 10;
+            $rF.position.z = (-1 * ($rF.$$parent.ringNumber - 1)) * 15;
           }
         )
       }

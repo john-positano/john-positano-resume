@@ -22,7 +22,8 @@ app.use(
 			level: 9
 		}),
 		express.static('public'),
-		express.static('node_modules')
+		express.static('node_modules'),
+		express.static('modules')
 	]
 );
 

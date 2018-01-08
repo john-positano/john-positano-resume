@@ -9,10 +9,10 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   };
 
   $scope.scrollControl = function ($e) {
-    $rootScope.$emit('scroll', $e);
     $e.originalEvent.deltaY > 0
-      ? (!($scope.camera.position.z > -50) || $scope.camera.position.z--) 
+      ? (!($scope.camera.position.z > -75) || $scope.camera.position.z--) 
       : (!($scope.camera.position.z < 6) || $scope.camera.position.z++);
+      $timeout(function () { $rootScope.$emit('scroll', $e, $scope); });
   };
 
   $scope.dragControl = function ($e) {
@@ -25,10 +25,13 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   $scope.$canvas.on('mousedown', $scope.mouseDown);
   $scope.$canvas.on('mouseup', $scope.mouseUp);
   $scope.$canvas.on('mousemove', $scope.mouseMove);
-  $scope.$canvas.on('mousewheel', $scope.scrollControl);
-  $document.on('scroll', function ($e) {  
-    $e.preventDefault(); 
-    $e.stopPropagation();
-    console.log($e.isDefaultPrevented(), $e.isPropagationStopped()); 
-  });
+  // $scope.$canvas.on('mousewheel', $scope.scrollControl);
+  $document.on('mousewheel', $scope.scrollControl);
+  // $('body').on('click', function ($e) { console.log('document click', $e); });
+  angular.element($window).on(
+    'resize',
+    function () {
+      $scope.sizeUpFrame($window.innerWidth, $window.innerHeight);
+    }
+  );
 });

@@ -13,7 +13,7 @@ JohnPositanoResume.config(
 			    		controller: 'homePageController'
 			    	},
 			    	'tunnelView': {
-			    		template: '<div class="darkgrey full></div>'
+			    		templateUrl: 'views/tunnelView.html'
 			    	}
 			    }
 				}
@@ -23,8 +23,8 @@ JohnPositanoResume.config(
 				{ 
 					url: '1',
 					views: {
-						'tunnelView': {
-							template: '<div class="green full"></div>'
+						'tunnelFrameBackground': {
+							template: '<div class="full"></div>'
 						}
 					}
 				}
@@ -34,8 +34,8 @@ JohnPositanoResume.config(
 				{ 
 					url: '2',
 					views: {
-						'tunnelView': {
-							template: '<div class="red full"></div>'
+						'tunnelFrameBackground': {
+							template: '<div class="full"></div>'
 						}
 					}
 				}
@@ -45,8 +45,8 @@ JohnPositanoResume.config(
 				{ 
 					url: '3',
 					views: {
-						'tunnelView': {
-							template: '<div class="blue full"></div>'
+						'tunnelFrameBackground': {
+							template: '<div class="full"></div>'
 						}
 					}
 				}
@@ -56,8 +56,8 @@ JohnPositanoResume.config(
 				{ 
 					url: '4',
 					views: {
-						'tunnelView': {
-							template: '<div class="orange full"></div>'
+						'tunnelFrameBackground': {
+							template: '<div class="full"></div>'
 						}
 					}
 				}
@@ -67,8 +67,8 @@ JohnPositanoResume.config(
 				{ 
 					url: '5',
 					views: {
-						'tunnelView': {
-							template: '<div class="purple full"></div>'
+						'tunnelFrameBackground': {
+							template: '<div class="full"></div>'
 						}
 					}
 				}
@@ -78,7 +78,7 @@ JohnPositanoResume.config(
 				{ 
 					url: '6',
 					views: {
-						'tunnelView': {
+						'tunnelFrameBackground': {
 							template: '<div class="yellow full"></div>'
 						}
 					}
