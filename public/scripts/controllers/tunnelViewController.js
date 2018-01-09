@@ -49,7 +49,7 @@ JohnPositanoResume.controller('tunnelViewController', function ($scope, $log, $t
     var $load = $scope.loadState;
     var $err = $scope.stateErrorHandler;
     var $view = $scope.stateViewHandler;
-    var offset = -45;
+    var offset = -62;
     var interval = -15;
 
     switch ($nextState) {

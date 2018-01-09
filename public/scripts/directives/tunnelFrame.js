@@ -21,7 +21,7 @@ JohnPositanoResume.directive(
           if ($scope && $scope.camera && $scope.camera.position && $scope.camera.position.z) {
             $z = $scope.camera.position.z;
           }
-          var adjustmentFactor = ((Math.pow($f, .6) - .6) * 30);
+          var adjustmentFactor = ((Math.pow($f, .6) - .4) * 32);
           $scope.camera = new THREE.PerspectiveCamera(172 - adjustmentFactor, $f, .1, 1000);
           console.log('adjustmentFactor', adjustmentFactor);
           $scope.camera.position.z = $z;
