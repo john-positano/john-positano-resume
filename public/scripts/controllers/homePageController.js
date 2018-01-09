@@ -66,7 +66,7 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
         case ($z <= -59) && ($z > -74):
           $state.go('main.five');
           break;
-        case ($z <= -70) && ($z > -89):
+        case ($z <= -74) && ($z > -89):
           $state.go('main.six');
           break;
       }

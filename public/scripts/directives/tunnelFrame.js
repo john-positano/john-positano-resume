@@ -21,7 +21,9 @@ JohnPositanoResume.directive(
           if ($scope && $scope.camera && $scope.camera.position && $scope.camera.position.z) {
             $z = $scope.camera.position.z;
           }
-          $scope.camera = new THREE.PerspectiveCamera(145 - ($f * ($w / 300) * .7), $f, .1, 1000);
+          var adjustmentFactor = ($f * 20) - 8;
+          $scope.camera = new THREE.PerspectiveCamera(170 - adjustmentFactor, $f, .1, 1000);
+          console.log('adjustmentFactor', adjustmentFactor);
           $scope.camera.position.z = $z;
           $scope.renderer.setSize(($w || $scope.$w), ($h || $scope.$h));
         };

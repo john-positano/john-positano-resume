@@ -1,4 +1,4 @@
-.skim, body, j-frame, j-frame canvas {
+.skim, body, .col-xs-12, j-frame, j-frame canvas {
   margin: 0px;
   padding: 0px; }
 
@@ -9,7 +9,7 @@
   min-height: 100%; }
 
 body {
-  background-color: black; }
+  background-color: #888888; }
 
 div.row, div.col-xs-12 {
   height: 100%; }
@@ -26,9 +26,6 @@ tunnel-frame {
 
 a {
   height: 100px; }
-
-.darkgrey {
-  background-color: #444444; }
 
 .red {
   background-color: red; }
