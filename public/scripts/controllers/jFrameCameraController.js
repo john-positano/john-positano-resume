@@ -32,6 +32,7 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
     'resize',
     function () {
       $scope.sizeUpFrame($window.innerWidth, $window.innerHeight);
+      $scope.animate();
     }
   );
 });

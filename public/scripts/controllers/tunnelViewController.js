@@ -49,7 +49,7 @@ JohnPositanoResume.controller('tunnelViewController', function ($scope, $log, $t
     var $load = $scope.loadState;
     var $err = $scope.stateErrorHandler;
     var $view = $scope.stateViewHandler;
-    var offset = -50;
+    var offset = -45;
     var interval = -15;
 
     switch ($nextState) {
@@ -96,7 +96,11 @@ JohnPositanoResume.controller('tunnelViewController', function ($scope, $log, $t
   angular.element($window).on(
     'resize',
     function () {
-      $scope.sizeUpFrame($window.innerWidth, $window.innerHeight);
+      var $ng = angular.element;
+      var _width = $ng(window).width();
+      var _height = $ng(window).height();
+      $scope.sizeUpFrame(_width, _height);
+      $scope.animate();
       // console.log($window.innerWidth, $window.innerHeight);
     }
   );
