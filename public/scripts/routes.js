@@ -28,7 +28,7 @@ JohnPositanoResume.config(
 					views: {
 						'tunnelFrameBackground': {
 							template: '<div class="full red"></div>'
-						}
+						},
 					}
 				}
 			)

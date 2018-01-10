@@ -11,18 +11,14 @@
 body {
   background-color: #888888; }
 
-div.row, div.col-xs-12 {
-  height: 100%; }
-
 j-frame {
   display: block; }
 
 tunnel-frame {
   display: block; }
   tunnel-frame * {
-    position: fixed;
-    top: 0px;
-    display: inline-block; }
+    position: absolute;
+    top: 0px; }
 
 a {
   height: 100px; }
@@ -72,9 +68,19 @@ a {
 .homePage, .homePage > * {
   pointer-events: none; }
 
-.THREECSS3dRenderer {
-  z-index: 5; }
-
 div[ui-view="tunnelView"] {
   width: 100%;
   height: 100%; }
+
+.THREECSS3dRenderer {
+  z-index: 5;
+  font-size: calc(1vw + 1vh); }
+  .THREECSS3dRenderer * {
+    position: initial;
+    font-size: calc(1vw + 1vh); }
+  .THREECSS3dRenderer div.panel, .THREECSS3dRenderer div.panel-body, .THREECSS3dRenderer div.panel-footer {
+    display: block; }
+  .THREECSS3dRenderer .dropdown, .THREECSS3dRenderer .dropdown-menu {
+    position: absolute; }
+    .THREECSS3dRenderer .dropdown a, .THREECSS3dRenderer .dropdown-menu a {
+      display: inline; }

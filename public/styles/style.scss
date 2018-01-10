@@ -4,7 +4,7 @@
 
 body { @extend .skim; background-color: #888888; }
 
-div.row, div.col-xs-12 { height: 100%; }
+// div.row, div.col-xs-12 { height: 100%; }
 
 .col-xs-12 { @extend .skim; }
 
@@ -17,7 +17,7 @@ j-frame {
 tunnel-frame {
   display: block;
   @extend .full;
-  * { position: fixed; top: 0px; display: inline-block; }
+  * { position: absolute; top: 0px; }
 }
 
 a { height: 100px; }
@@ -43,5 +43,15 @@ a { height: 100px; }
 
 .one { position: relative; display: inline-block; width: 8.33333vw; }
 .homePage, .homePage > * { pointer-events: none; }
-.THREECSS3dRenderer { z-index: 5; }
 div[ui-view="tunnelView"] { @extend .full; width: 100%; height: 100%; }
+
+.THREECSS3dRenderer { 
+  z-index: 5;
+  font-size: calc(1vw + 1vh);
+  * { 
+    position: initial; 
+    font-size: calc(1vw + 1vh);
+  }
+  div.panel, div.panel-body, div.panel-footer { display: block; }
+  .dropdown, .dropdown-menu { position: absolute; a { display: inline; } }
+}

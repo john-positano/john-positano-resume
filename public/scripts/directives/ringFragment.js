@@ -8,7 +8,9 @@ JohnPositanoResume.directive(
           '/views/3dComponents/ring_fragment.json',
           function (geometry) {
             var $rF = new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true }));
-            [$rF.scale.x, $rF.scale.y, $rF.scale.z] = Array(3).fill(0.75);
+            $rF.scale.x = 0.75;
+            $rF.scale.y = 0.75;
+            $rF.scale.z = 0.75;
             $rF.rotation.x = Math.PI / -2;
             $rF.rotation.z = Math.PI / -2;
             $rF.material.opacity = 0.9;

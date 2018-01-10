@@ -27,6 +27,7 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   $scope.$canvas.on('mousemove', $scope.mouseMove);
   // $scope.$canvas.on('mousewheel', $scope.scrollControl);
   $document.on('mousewheel', $scope.scrollControl);
+  $document.on('touch', console.log);
   // $('body').on('click', function ($e) { console.log('document click', $e); });
   angular.element($window).on(
     'resize',

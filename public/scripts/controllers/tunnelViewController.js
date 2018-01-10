@@ -15,30 +15,17 @@ JohnPositanoResume.controller('tunnelViewController', function ($scope, $log, $t
         {
           class: "slim full border THREECSS3dRenderer",
         }
-      )[0];
-      $div.innerHTML = payload.data;
-      var $divObject = new THREE.CSS3DObject($div);
+      )
+      $div.html(payload.data);
+      var $divObject = new THREE.CSS3DObject($div[0]);
       $divObject.position.x = 
       $divObject.position.y = 0;
       $divObject.position.z = $z;
       $divObject.scale.x = 
       $divObject.scale.y = 
       $divObject.scale.z = 0.5;
-      // $rootScope.$on(
-      //   'click', 
-      //   function (_, $e) { 
-      //     $divObject.element.dispatchEvent(
-      //       new MouseEvent('click', $e.originalEvent)
-      //     ); 
-      //   }
-      // );
-      $divObject.element.addEventListener(
-        'click', 
-        function ($e) { console.log($e); }
-      );
 
       $scope.view = $divObject;
-      // console.log('$divObject for click event', $divObject);
       $scope.scene.add($divObject);
       $scope.animate();
   };
@@ -49,7 +36,7 @@ JohnPositanoResume.controller('tunnelViewController', function ($scope, $log, $t
     var $load = $scope.loadState;
     var $err = $scope.stateErrorHandler;
     var $view = $scope.stateViewHandler;
-    var offset = -62;
+    var offset = -80;
     var interval = -15;
 
     switch ($nextState) {

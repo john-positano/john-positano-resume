@@ -17,13 +17,13 @@ JohnPositanoResume.directive(
           var $w = ($w || $scope.$w),
               $h = ($h || $scope.$h),
               $f = ($w / $h),
-              $z = 0;
+              $z = 0
+              $d = 165 - ($f * 25) + ($w / 80);
+              console.log('$d', $d);
           if ($scope && $scope.camera && $scope.camera.position && $scope.camera.position.z) {
             $z = $scope.camera.position.z;
           }
-          var adjustmentFactor = ((Math.pow($f, .6) - .4) * 32);
-          $scope.camera = new THREE.PerspectiveCamera(172 - adjustmentFactor, $f, .1, 1000);
-          console.log('adjustmentFactor', adjustmentFactor);
+          $scope.camera = new THREE.PerspectiveCamera($d, $f, .1, 1000);
           $scope.camera.position.z = $z;
           $scope.renderer.setSize($w, $h);
         };
