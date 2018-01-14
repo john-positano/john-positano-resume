@@ -6,6 +6,8 @@ let stream = require('stream');
 
 let uglify = require('./modules/uglify.js');
 
+var TwilioApi = require('./twilioApi/init.js');
+
 app.use(
 	'*.js',
 	(req, res, next) => {

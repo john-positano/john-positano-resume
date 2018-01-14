@@ -32,6 +32,7 @@
   "scripts": {
     "installation": "npm install",
     "build": "node ./modules/uglify.js",
-    "start": "./node_modules/nodemon/bin/nodemon.js -e js,scss,html node init.js"
+    "start": "./node_modules/nodemon/bin/nodemon.js node init.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js -e js,scss,html node init.js"
   }
 }
