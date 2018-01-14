@@ -1,0 +1,26 @@
+* {  }
+.full-width { width: 100%; }
+.container-fluid { width: 98vw !important; }
+
+.padding-none { padding: 0px !important; }
+.margin-none { margin: 0px !important; }
+
+@for $i from 1 through 24 {
+  .font-size-#{$i} { font-size: calc(((1vw + 1vh) * #{$i}) / 3); }
+}
+
+@for $i from 1 through 12 {
+  .col-xs-#{$i} { padding: 0px; }
+  .h-#{$i}\/12 { height: calc(#{$i} * (100vh) / 12); }
+}
+
+@for $i from 1 through 100 {
+  .pl-#{$i} { padding-left: calc(#{$i} * 1%) !important; }
+  .pt-#{$i} { padding-top: calc(#{$i} * 1%) !important; }
+  .pr-#{$i} { padding-right: calc(#{$i} * 1%) !important; }
+  .pb-#{$i} { padding-bottom: calc(#{$i} * 1%) !important; }
+  .ml-#{$i} { margin-left: calc(#{$i} * 1%) !important; }
+  .mt-#{$i} { margin-top: calc(#{$i} * 1%) !important; }
+  .mr-#{$i} { margin-right: calc(#{$i} * 1%) !important; }
+  .mb-#{$i} { margin-bottom: calc(#{$i} * 1%) !important; }
+}

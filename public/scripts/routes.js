@@ -27,8 +27,14 @@ JohnPositanoResume.config(
 					url: '1',
 					views: {
 						'tunnelFrameBackground': {
-							template: '<div class="full red"></div>'
+							template: '<div class="full red"></div>',
+							controller: 'webDevelopmentController'
 						},
+					},
+					resolve: {
+						$tunnelStateChangeStart: function () {
+							$rootScope.$emit('$tunnelStateChangeStart', 'main.one');
+						}
 					}
 				}
 			)
@@ -39,6 +45,11 @@ JohnPositanoResume.config(
 					views: {
 						'tunnelFrameBackground': {
 							template: '<div class="full green"></div>'
+						}
+					},
+					resolve: {
+						$tunnelStateChangeStart: function () {
+							$rootScope.$emit('$tunnelStateChangeStart', 'main.two');
 						}
 					}
 				}

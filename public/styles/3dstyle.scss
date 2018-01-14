@@ -1,0 +1,39 @@
+.THREECSS3dRenderer {
+  &:nth-child(3n + 1) { pointer-events: none; }
+  color: white;
+  iframe { border: none !important; }
+
+  $bu: calc(1vw + 1vh);
+
+  border: 1px dotted white;
+  border-radius: $bu;
+
+  #webDevelopmentTopLeft {
+    position: absolute;
+    border-radius: $bu;
+    @media only screen and (orientation: portrait) {
+      width: 100%; height: 35%;
+    }
+
+    @media only screen and (orientation: landscape) {
+      width: 35%; height: 35%; top: 5%;
+    }
+  }
+
+  #webDevelopmentBottomRight {
+    position: absolute;
+    border-radius: $bu;
+    @media only screen and (orientation: portrait) {
+      width: 100%; height: 35%; top: 65%;
+    }
+
+    @media only screen and (orientation: landscape) {
+      width: 35%; height: 35%; top: 60%; left: 65%;
+    }
+  }
+
+  @for $i from 1 through 24 {
+    .font-size-#{$i} { font-size: calc(((1vw + 1vh) * #{$i}) / 3); }
+  }
+  .b { font-weight: bold; }
+}

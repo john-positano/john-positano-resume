@@ -1,3 +1,9 @@
+iframe {
+  z-index: 100 !important; }
+
+body {
+  overflow: hidden; }
+
 .skim, body, .col-xs-12, j-frame, j-frame canvas {
   margin: 0px;
   padding: 0px; }
@@ -41,6 +47,9 @@ a {
 .purple {
   background-color: purple; }
 
+.color-white {
+  color: white; }
+
 .main-name {
   font-size: 64px; }
 
@@ -53,12 +62,7 @@ a {
 
 .mainContainer {
   width: 100vw;
-  height: 100vh;
-  color: blue; }
-
-.border {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 5px; }
+  height: 100vh; }
 
 .one {
   position: relative;
@@ -71,16 +75,3 @@ a {
 div[ui-view="tunnelView"] {
   width: 100%;
   height: 100%; }
-
-.THREECSS3dRenderer {
-  z-index: 5;
-  font-size: calc(1vw + 1vh); }
-  .THREECSS3dRenderer * {
-    position: initial;
-    font-size: calc(1vw + 1vh); }
-  .THREECSS3dRenderer div.panel, .THREECSS3dRenderer div.panel-body, .THREECSS3dRenderer div.panel-footer {
-    display: block; }
-  .THREECSS3dRenderer .dropdown, .THREECSS3dRenderer .dropdown-menu {
-    position: absolute; }
-    .THREECSS3dRenderer .dropdown a, .THREECSS3dRenderer .dropdown-menu a {
-      display: inline; }

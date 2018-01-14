@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/jquery.mobile.custom.min.js"></script>
+    <script src="/jquery.mobile.swipeupdown.closure.js"></script>
+
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/grid.css" />
+    <style>
+
+    </style>
+  </head>
+  <body class="container-fluid form-red full-width" ng-controller="webDevelopmentController">
+    <div class="row">
+      <div class="col-xs-12 h-1/12"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1 col-xs-offset-1">
+        <p class="font-size-10 text-right">To:&nbsp;</p>
+      </div>
+      <div class="col-xs-9">
+        <input class="h-2/12 font-size-12 full-width" autofocus />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        <p class="font-size-10 text-right">Msg:&nbsp;</p>
+      </div>
+      <div class="col-xs-9"> 
+        <textarea class="h-6/12 full-width" autofocus></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-7 col-xs-offset-1"></div>
+      <div class="col-xs-3 pt-1">
+        <button class="btn btn-lg h-2/12 btn-danger full-width pt-2 font-size-10">Email</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    parent.$compile($(document), 'webDevelopmentBottomRight');
+  </script>
+</html>

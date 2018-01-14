@@ -11,18 +11,17 @@ JohnPositanoResume.directive(
 
 				$scope.scene = new THREE.Scene();
 				$scope.renderer = new THREE.WebGLRenderer({ alpha: true });
+				$scope.camera = new THREE.PerspectiveCamera(161 - (($scope.$w / $scope.$h) * ($scope.$w / 220) * 2.5), ($scope.$w / $scope.$h), .1, 1000);
 
 				$scope.sizeUpFrame = function ($w, $h) {
 					var $w = ($w || $scope.$w),
 							$h = ($h || $scope.$h),
 							$f = ($w / $h),
 							$z = 0;
-					if ($scope && $scope.camera && $scope.camera.position && $scope.camera.position.z) {
-						$z = $scope.camera.position.z;
-					}
-					console.log($f);
-					$scope.camera = new THREE.PerspectiveCamera(161 - ($f * ($w / 220) * 2.5), $f, .1, 1000);
-					$scope.camera.position.z = $z;
+
+					$scope.camera.fov = 161 - ($f * ($w / 220));
+					$scope.camera.aspect = $f;
+					$scope.camera.updateProjectionMatrix();
 					$scope.renderer.setSize($w, $h);
 				};
 
@@ -41,7 +40,7 @@ JohnPositanoResume.directive(
 				$scope.rollCamera = function ($timeout) {
 					$scope.$emit('render');
 					$scope.renderer.render($scope.scene, $scope.camera);
-					setTimeout(function () { requestAnimationFrame($scope.rollCamera); }, 20);
+					setTimeout(function () { requestAnimationFrame($scope.rollCamera); }, 10);
 				};
 
 				$scope.$emit('jFrameSetupComplete');

@@ -53,8 +53,10 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
     'scroll',
     function (_, $e) {
       var $z = $scope.camera.position.z;
-      switch (true) {
+      var $tunnelStateChangeStart = true;
+      switch (true) {          
         case $z > 1:
+          ($state.$current.name == 'main') || $rootScope.$emit('$tunnelStateChangeStart', 'main');
           $state.go('main');
           break;
         case ($z <= 1) && ($z > -14):
@@ -74,6 +76,9 @@ JohnPositanoResume.controller('homePageController', function ($scope, $log, $tim
           break;
         case ($z <= -74) && ($z > -89):
           $state.go('main.six');
+          break;
+        default:
+          $tunnelStateChangeStart = false;
           break;
       }
     }
