@@ -33,6 +33,7 @@
     "installation": "npm install",
     "build": "node ./modules/uglify.js",
     "start": "./node_modules/nodemon/bin/nodemon.js node init.js",
-    "dev": "./node_modules/nodemon/bin/nodemon.js -e js,scss,html node init.js"
+    "dev": "./node_modules/nodemon/bin/nodemon.js -e js,scss,html node init.js",
+    "spill": "node -e 'console.log(`process.env \n\n\n`, process.env, `\n\n\n\n\n\n\n\n\n\n\n`)'"
   }
 }

@@ -9,14 +9,22 @@ phases:
       - pwd
       - echo hostname
       - hostname
+      - echo spill 1
+      - npm run spill
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
+      - echo spill 2
+      - npm run spill
   build:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
       - npm run build
+      - echo spill 3
+      - npm run spill
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo spill 4
+      - npm run spill
