@@ -57,3 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 
+build/john-positano-resume-key-pair-2.pem

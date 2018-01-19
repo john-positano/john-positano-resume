@@ -23,7 +23,6 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   };
 
   $scope.swipeControl = function ($e) {
-    console.log($e.type);
     if ($e.type == "swipedown") { (!($scope.camera.position.z > -75) || $scope.camera.position.z--); }
     if ($e.type == "swipeup") { (!($scope.camera.position.z < 6) || $scope.camera.position.z++); }
     $timeout(function () { $rootScope.$emit('scroll', $e, $scope); }); 
@@ -42,13 +41,13 @@ JohnPositanoResume.controller('jFrameCameraController', function ($rootScope, $w
   // $scope.$canvas.on('mousewheel', $scope.scrollControl);
   $document.on('mousewheel', $scope.scrollControl);
   $document.on('keydown', $scope.keyControl);
-  $document.on('swipe', console.log);
+  $document.on('swipe', angular.noop);
   $document.on('swipeup', $scope.swipeControl);
   $document.on('swipedown', $scope.swipeControl);
   $document.on('swipeLeft', angular.noop);
   $document.on('swipeRight', angular.noop);
   $document.on('tap', function ($e) { $e.preventDefault(); $e.stopPropagation(); });
-  $document.on('focus', function ($e) { console.log('document focus', $e); });
+  $document.on('focus', angular.noop);
   $document.on('tapHold', angular.noop);
   angular.element($window).on(
     'resize',

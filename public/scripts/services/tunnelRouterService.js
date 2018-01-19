@@ -47,7 +47,7 @@ JohnPositanoResume.service('tunnelRouterService', function ($http, $q, $state, $
               $divObject.$scope = $s;
               $divObject.position.x = 
               $divObject.position.y = 0;
-              $divObject.position.z = -12;
+              $divObject.position.z = -10;
               $divObject.scale.x = 
               $divObject.scale.y = 
               $divObject.scale.z = 0.05 - (screen.width / 100000);
@@ -62,7 +62,7 @@ JohnPositanoResume.service('tunnelRouterService', function ($http, $q, $state, $
   };
 
   self.positionTunnelView = function (viewNumber) {
-    self.tunnelViews[viewNumber].position.z = -12 - viewNumber - (Math.floor((viewNumber) / 3) * 15);
+    self.tunnelViews[viewNumber].position.z = -12 - (viewNumber * 3) - (Math.floor((viewNumber) / 3) * 15);
   };
 
   self.clearView = function () {
