@@ -100,8 +100,8 @@ C.pool.query(
 
 		var server = spdy.createServer(serverOptions, app);
 
-		server.listen(_server, function () {
-			console.log(`Listening on port 10000`);
+		server.listen(process.env.HTTPS_PORT, function () {
+			console.log(`Listening on port ${process.env.HTTPS_PORT}`);
 		});
 	}
 );
