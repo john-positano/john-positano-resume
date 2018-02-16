@@ -15,12 +15,18 @@ let uglify = require('./modules/uglify.js');
 
 var TwilioApi = require('./twilioApi/init.js');
 var KeyAPI = require('./keyApi/init.js');
-var $port = (process.env.PORT || 3000);
+var $port = (process.env.PORT || 8080);
+var $httpsPort = (process.env.HTTPS_PORT || 443);
 
-app.use((req, res, next) => {
-	if (req.protocol !== 'https') { res.redirect(`https://${req.hostname}${req.originalUrl}`, 301); return; }
-	next();
-});
+// app.use((req, res, next) => {
+// 	var redirectString = `https://${req.hostname}:8443${req.originalUrl}`;
+// 	if (req.originalUrl == '/') {
+// 		console.log('\n\nredirectString', redirectString);
+// 		console.log('req.headers', req.headers);
+// 	}
+// 	if (req.protocol !== 'https') { res.redirect(302, redirectString); return; }
+// 	next();
+// });
 
 app.post(
 	'/ipLog',
@@ -79,6 +85,8 @@ app.use(
 	express.static('public/index.html')
 );
 
+console.log('Date: ' + Date());
+
 var _server = app.listen($port, function () {
 	console.log(`Listening on port ${$port}`);
 });
@@ -100,8 +108,8 @@ C.pool.query(
 
 		var server = spdy.createServer(serverOptions, app);
 
-		server.listen(process.env.HTTPS_PORT, function () {
-			console.log(`Listening on port ${process.env.HTTPS_PORT}`);
+		server.listen($httpsPort, function () {
+			console.log(`Listening on port ${$httpsPort}`);
 		});
 	}
 );
