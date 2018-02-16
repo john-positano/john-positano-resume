@@ -1,3 +1,7 @@
+form {
+  margin: 0px !important;
+  padding: 0px !important; }
+
 .full-width {
   width: 100%; }
 
@@ -2553,3 +2557,6 @@
 
 .mb-100 {
   margin-bottom: calc(100 * 1%) !important; }
+
+.error input, .error textarea {
+  border-color: red; }

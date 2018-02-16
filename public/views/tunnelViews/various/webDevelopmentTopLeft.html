@@ -1,4 +1,4 @@
-<html>
+<html ng-controller="webDevelopmentController">
   <head>
     <script src="/jquery/jquery.min.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -6,6 +6,7 @@
     <script src="/jquery.mobile.swipeupdown.closure.js"></script>
 
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/styles/grid.css" />
     <style>
 
@@ -15,35 +16,46 @@
     </script>
   </head>
   <body class="container-fluid form-red full-width">
-    <div class="row">
-      <div class="col-xs-12 h-1/12"></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 h-2/12 pt-0">
-        <p class="text-center font-size-10">Input a Phone Number</p>
+    <form ng-model="phoneForm">
+      <div class="row">
+        <div class="col-xs-12 h-1/12"></div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 col-xs-offset-1 mr-0 pr-1">
-        <input class="h-2/12 font-size-12 full-width" />
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 h-2/12 pt-0">
+          <p 
+            class="text-center font-size-10">
+            Input a Phone Number&nbsp;
+            <i 
+              ng-if="isPhoneNumberError" 
+              class="fa fa-exclamation-triangle" 
+              style="color: red;" 
+              aria-hidden="true">
+            </i>
+          </p>
+        </div>
       </div>
-      <div class="col-xs-3 mr-0 pr-1">
-        <input class="h-2/12 font-size-12 full-width" />
+      <div class="row" ng-class="{'error' : isPhoneNumberError}">
+        <div class="col-xs-3 col-xs-offset-1 mr-0 pr-1">
+          <input class="h-2/12 font-size-12 full-width text-center" ng-model="firstThree"/>
+        </div>
+        <div class="col-xs-3 mr-0 pr-1">
+          <input class="h-2/12 font-size-12 full-width text-center" ng-model="secondThree"/>
+        </div>
+        <div class="col-xs-4">
+          <input class="h-2/12 font-size-12 full-width text-center" ng-model="thirdFour"/>
+        </div>
       </div>
-      <div class="col-xs-4">
-        <input class="h-2/12 font-size-12 full-width" />
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 pt-3">
+          <button class="btn btn-lg h-2/12 btn-danger full-width pt-1 font-size-10" ng-click="sendText(this)">Automate a text</button>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 pt-3">
-        <button class="btn btn-lg h-2/12 btn-danger full-width pt-1 font-size-10">Automate a text</button>
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 pt-3">
+          <button class="btn btn-lg h-2/12 btn-danger full-width pt-1 font-size-10" ng-click="sendCall(this)">Automate a call</button>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 pt-3">
-        <button class="btn btn-lg h-2/12 btn-danger full-width pt-1 font-size-10">Automate a call</button>
-      </div>
-    </div>
+    </form>
   </body>
   <script>
     parent.$compile($(document), 'webDevelopmentTopLeft');

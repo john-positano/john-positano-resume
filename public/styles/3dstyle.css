@@ -1,9 +1,9 @@
 .THREECSS3dRenderer {
+  pointer-events: none;
   color: white;
-  border: 1px dotted white;
-  border-radius: calc(1vw + 1vh); }
-  .THREECSS3dRenderer:nth-child(3n + 1) {
-    pointer-events: none; }
+  border: none; }
+  .THREECSS3dRenderer * {
+    pointer-events: initial; }
   .THREECSS3dRenderer iframe {
     border: none !important; }
   .THREECSS3dRenderer #webDevelopmentTopLeft {
@@ -18,6 +18,21 @@
         width: 35%;
         height: 35%;
         top: 5%; } }
+  .THREECSS3dRenderer #webDevelopmentTopRight {
+    position: absolute;
+    border-radius: calc(1vw + 1vh); }
+    @media only screen and (orientation: portrait) {
+      .THREECSS3dRenderer #webDevelopmentTopRight {
+        top: 15%;
+        left: 0%;
+        width: 100%;
+        height: 30%; } }
+    @media only screen and (orientation: landscape) {
+      .THREECSS3dRenderer #webDevelopmentTopRight {
+        top: 10%;
+        left: 65%;
+        width: 35%;
+        height: 45%; } }
   .THREECSS3dRenderer #webDevelopmentBottomRight {
     position: absolute;
     border-radius: calc(1vw + 1vh); }

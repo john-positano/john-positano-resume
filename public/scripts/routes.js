@@ -1,12 +1,12 @@
 JohnPositanoResume.config(
-	function ($stateProvider, $locationProvider, $rootScopeProvider) {
+	function ($stateProvider, $locationProvider, $rootScopeProvider, $urlRouterProvider) {
 		$locationProvider.html5Mode({ enabled: true, requireBase: false });
 
 		$stateProvider
 			.state(
 				'main',
 				{
-			    url: '',
+			    url: '/',
 			    views: {
 			    	'mainView': {
 			    		templateUrl: 'views/homepage.html',
@@ -24,15 +24,15 @@ JohnPositanoResume.config(
 			.state(
 				'main.one', 
 				{ 
-					url: '1',
+					url: 'webDevelopment',
 					views: {
 						'tunnelFrameBackground': {
 							template: '<div class="full red"></div>',
-							controller: 'webDevelopmentController'
+							// controller: 'webDevelopmentController'
 						},
 					},
 					resolve: {
-						$tunnelStateChangeStart: function () {
+						$tunnelStateChangeStart: function ($rootScope) {
 							$rootScope.$emit('$tunnelStateChangeStart', 'main.one');
 						}
 					}
@@ -98,5 +98,7 @@ JohnPositanoResume.config(
 					}
 				}
 			);
+
+			$urlRouterProvider.otherwise('/');
 	}
 );
