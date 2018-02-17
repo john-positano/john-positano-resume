@@ -16,7 +16,6 @@ let uglify = require('./modules/uglify.js');
 var TwilioApi = require('./twilioApi/init.js');
 var KeyAPI = require('./keyApi/init.js');
 var $port = (process.env.PORT || 8080);
-var $httpsPort = (process.env.HTTPS_PORT || 443);
 
 // app.use((req, res, next) => {
 // 	var redirectString = `https://${req.hostname}:8443${req.originalUrl}`;
@@ -108,8 +107,8 @@ C.pool.query(
 
 		var server = spdy.createServer(serverOptions, app);
 
-		server.listen($httpsPort, function () {
-			console.log(`Listening on port ${$httpsPort}`);
+		server.listen(_server, function () {
+			console.log(`HTTPS Listening on port ${$port}`);
 		});
 	}
 );
