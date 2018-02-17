@@ -16,16 +16,22 @@ let uglify = require('./modules/uglify.js');
 var TwilioApi = require('./twilioApi/init.js');
 var KeyAPI = require('./keyApi/init.js');
 var $port = (process.env.PORT || 8080);
+var $httpsPort = (process.env.HTTPS_PORT || 8443);
 
 // app.use((req, res, next) => {
-// 	var redirectString = `https://${req.hostname}:8443${req.originalUrl}`;
+// 	var redirectString = `https://${req.hostname}:8080${req.originalUrl}`;
 // 	if (req.originalUrl == '/') {
 // 		console.log('\n\nredirectString', redirectString);
 // 		console.log('req.headers', req.headers);
 // 	}
-// 	if (req.protocol !== 'https') { res.redirect(302, redirectString); return; }
+// 	if (req.protocol !== 'https') { res.redirect(301, redirectString); return; }
 // 	next();
 // });
+
+app.use((req, res, next) => {
+	res.send('hi');
+	return;
+});
 
 app.post(
 	'/ipLog',
@@ -107,8 +113,8 @@ C.pool.query(
 
 		var server = spdy.createServer(serverOptions, app);
 
-		server.listen(_server, function () {
-			console.log(`HTTPS Listening on port ${$port}`);
+		server.listen($httpsPort, function () {
+			console.log(`HTTPS Listening on port ${$httpsPort}`);
 		});
 	}
 );
