@@ -18,21 +18,6 @@ var KeyAPI = require('./keyApi/init.js');
 var $port = (process.env.PORT || 8080);
 var $httpsPort = (process.env.HTTPS_PORT || 8443);
 
-// app.use((req, res, next) => {
-// 	var redirectString = `https://${req.hostname}:8080${req.originalUrl}`;
-// 	if (req.originalUrl == '/') {
-// 		console.log('\n\nredirectString', redirectString);
-// 		console.log('req.headers', req.headers);
-// 	}
-// 	if (req.protocol !== 'https') { res.redirect(301, redirectString); return; }
-// 	next();
-// });
-
-app.use((req, res, next) => {
-	res.send('hi');
-	return;
-});
-
 app.post(
 	'/ipLog',
 	[
